@@ -1,64 +1,50 @@
 # Dubbo ops
+> ops前后台分离、前台使用vue、后台使用springboot
 
-[![Build Status](https://travis-ci.org/apache/incubator-dubbo-ops.svg?branch=develop)](https://travis-ci.org/apache/incubator-dubbo-ops)
-[![codecov](https://codecov.io/gh/apache/incubator-dubbo-ops/branch/develop/graph/badge.svg)](https://codecov.io/gh/apache/incubator-dubbo-ops)
-![license](https://img.shields.io/github/license/apache/incubator-dubbo-ops.svg)
+## 运行前台工程`dubbo-admin-frontend`
 
-[中文说明](README_ZH.md)
-### Demo Address
-* http://47.91.207.147/#/service
-* this demo is the latest version of `develop` branch, you can try it before building from source code
-### Screenshot
+<font style='color: red'>注意：IDEA需要安装vue插件：https://github.com/JetBrains/intellij-plugins/tree/master/vuejs</font>
 
-![index](https://raw.githubusercontent.com/apache/incubator-dubbo-ops/develop/doc/images/index.png)
+> 01.工程导入.png
 
-### Service Governance  
-service governance follows the version of Dubbo 2.7, and compatible for Dubbo 2.6, please refer to [here](https://github.com/apache/incubator-dubbo-ops/wiki/The-compatibility-of-service-governance)
-### Frontend
+![Image text](doc/images/01.工程导入.png)
 
-- [Vue.js](https://vuejs.org) and [Vuetify](https://vuetifyjs.com)
-- [dubbo-admin-frontend/README.md](dubbo-admin-frontend/README.md) for more detail
+> 02.导入IDEA成功.png
 
-### Backend
+![Image text](doc/images/02.导入IDEA成功.png)
 
-* Standard spring boot project
-* **NOTICE** this branch is based on Dubbo 2.7-SNAPSHOT, since this version is not published yet, so if you find a dependency error, please clear the dubbo2.7 related files in the local library
-* [configurations in application.properties](https://github.com/apache/incubator-dubbo-ops/wiki/Dubbo-Admin-configuration)
-* force update under root path(incubator-dubbo-ops) for the first building: `mvn -Dmaven.test.skip=true clean -U package`
+> 03.maven刷新正常.png
 
+![Image text](doc/images/03.maven刷新正常.png)
 
-### Production Setup
+> 04.配置IDEA运行vue项目.png
 
-1. Clone source code on develop branch `git clone https://github.com/apache/incubator-dubbo-ops.git`
-2. Specify registry address in `dubbo-admin-backend/src/main/resources/application-production.properties`
-3. Build
+![Image text](doc/images/04.配置IDEA运行vue项目.png)
 
-    > - `mvn clean package`
-4. Start 
-    * `mvn --projects dubbo-admin-backend spring-boot:run`  
-    OR
-    * `cd dubbo-admin-backend/target`;   `java -jar dubbo-admin-backend-0.0.1-SNAPSHOT.jar`
-5. Visit `http://localhost:8080`
----
+> 05.修改dubbo-admin-frontend运行时配置项.png
 
-### Development Setup
-* Run backend project
-   backend is a standard spring boot project, you can run it in any java IDE
-* Run frontend project
-  run with `npm run dev`.
-* visit web page
-  visit `http://localhost:8081`, frontend supports hot reload.
- * CORS problem
-    for the convenience of development, we deploy frontend and backend separately, so the frontend supports hot reload. In this mode, frontend will request `localhost:8080` to fetch data, this will cause a CORS problem, so we add a configuration in `dubbo-admin-frontend/config/index.js` to support CORS. This config will be activated under `npm run dev` mode.
+![Image text](doc/images/05.修改dubbo-admin-frontend运行时配置项.png)
 
-### Swagger support
+> 06.让IDEA支持vue中的js语法设置.png
 
-Once deployed, you can check http://localhost:8080/swagger-ui.html to check all restful api and models
+![Image text](doc/images/06.让IDEA支持vue中的js语法设置.png)
 
+> 07.运行dubbo-admin-frontend前台项目.png
 
-### License
+![Image text](doc/images/07.运行dubbo-admin-frontend前台项目.png)
 
-Apache Dubbo ops is under the Apache 2.0 license, Version 2.0.
-See [LICENSE](https://github.com/apache/incubator-dubbo-ops/blob/develop/LICENSE) for full license text.
+> 08.运行dubbo-admin-frontend前台项目成功.png
 
-# IDEA运行前端VUE项目配置
+![Image text](doc/images/08.运行dubbo-admin-frontend前台项目成功.png)
+
+> 09.dubbo-admin-frontend前台主页面.png
+
+![Image text](doc/images/09.dubbo-admin-frontend前台主页面.png)
+
+> 10.修改dubbo-admin-backend运行配置项.png
+
+![Image text](doc/images/10.修改dubbo-admin-backend运行配置项.png)
+
+> 11.dubbo-admin-backend运行成功.png
+
+![Image text](doc/images/11.dubbo-admin-backend运行成功.png)
